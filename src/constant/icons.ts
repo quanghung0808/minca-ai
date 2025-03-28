@@ -17,4 +17,5 @@ export const Icons = {
   ChevronRight: 'material-symbols:chevron-right',
   Cancel: 'material-symbols:cancel-outline-rounded',
   Loading: 'mingcute:loading-fill',
+  Activity: 'tabler:activity',
 } as const;

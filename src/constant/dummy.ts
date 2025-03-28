@@ -74,3 +74,24 @@ export const sampleActivities: Activity[] = [
     status: Statuses.DONE,
   },
 ];
+
+export const sampleAgents: Agent[] = [
+  {
+    id: 1,
+    name: AgentNames.CLAIMS,
+    status: 'In Progress',
+    lastAction: 'Waiting for task',
+  },
+  {
+    id: 2,
+    name: AgentNames.QOUTE,
+    status: 'In Progress',
+    lastAction: 'Waiting for task',
+  },
+  {
+    id: 3,
+    name: AgentNames.RECOMMENDATION,
+    status: 'In Progress',
+    lastAction: 'Waiting for task',
+  },
+];
