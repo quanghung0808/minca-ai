@@ -10,6 +10,8 @@ body {
 @theme {
   --animate-fade-in: fadeIn 0.3s ease-in;
   --animate-fade-out: fadeOut 0.3s ease-out;
+  --animate-pulse: pulse 1.5s infinite;
+  --animate-shimmer: shimmer 1.5s infinite;
 
   @keyframes fadeIn {
     0% {
@@ -30,6 +32,27 @@ body {
     100% {
       opacity: 0;
       transform: translateY(20px);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      backgroundposition: -468px 0;
+    }
+    100% {
+      backgroundposition: 468px 0;
     }
   }
 }
