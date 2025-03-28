@@ -1,6 +1,6 @@
 import StatusBadge from '@/components/badge/StatusBadge';
 import ButtonLoading from '@/components/loading/ButtonLoading';
-import { Statuses } from '@/constant/agents';
+import { AgentNames, Statuses } from '@/constant/agents';
 import { Icons } from '@/constant/icons';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Agent } from '@/types/agent';
@@ -57,7 +57,17 @@ const AgentCard: React.FC<AgentCardProps> = ({ agent }) => {
   return (
     <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
       <div className="py-4 px-6">
-        <div className="text-end">
+        <div className="flex justify-between">
+          <Icon
+            icon={
+              agent.name === AgentNames.CLAIMS
+                ? Icons.Claims
+                : agent.name === AgentNames.QOUTE
+                ? Icons.Quote
+                : Icons.Recommendation
+            }
+            className="h-5 w-5 text-indigo-500"
+          />
           <StatusBadge status={agent.status} />
         </div>
         <div className="flex justify-between items-center my-2">
