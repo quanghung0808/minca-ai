@@ -2,7 +2,10 @@ import React from 'react';
 import { routes } from '@/constant/routes';
 import SidebarItem from './SidebarItem';
 
-const Sidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
+const Sidebar: React.FC<{ isOpen: boolean; toggleSidebar: () => void }> = ({
+  isOpen,
+  toggleSidebar,
+}) => {
   return (
     <nav
       className={`fixed inset-y-0 left-0 z-50 w-64 bg-white text-gray-700 p-4 transform transition-transform duration-300 border-r border-gray-200
@@ -29,6 +32,7 @@ const Sidebar: React.FC<{ isOpen: boolean }> = ({ isOpen }) => {
             path={item.path}
             name={item.name}
             icon={item.icon}
+            toggleSidebar={toggleSidebar}
           />
         ))}
       </ul>

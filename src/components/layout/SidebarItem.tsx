@@ -6,15 +6,24 @@ interface SidebarItemProps {
   path?: string;
   name?: string;
   icon?: string;
+  toggleSidebar: () => void;
 }
 
-const SidebarItem: React.FC<SidebarItemProps> = ({ path, name, icon }) => {
+const SidebarItem: React.FC<SidebarItemProps> = ({
+  path,
+  name,
+  icon,
+  toggleSidebar,
+}) => {
   const location = useLocation();
   const navigate = useNavigate();
 
   return (
     <li
-      onClick={() => navigate(path ?? '')}
+      onClick={() => {
+        navigate(path ?? '');
+        toggleSidebar();
+      }}
       className={`flex items-center p-2 rounded-lg cursor-pointer text-sm md:text-base 
         ${
           location.pathname === path

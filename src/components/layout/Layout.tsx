@@ -12,7 +12,7 @@ const Layout: React.FC = () => {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar Navigation */}
-      <Sidebar isOpen={isOpen} />
+      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
