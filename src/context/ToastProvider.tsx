@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import React, { createContext, useState, useContext } from 'react';
 
 interface ToastContextProps {
@@ -45,10 +46,24 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
   };
 
   const severityStyles = {
-    success: 'bg-green-500',
-    error: 'bg-red-500',
-    warning: 'bg-yellow-500',
-    info: 'bg-blue-500',
+    success: {
+      background: 'bg-green-500',
+      icon: (
+        <Icon icon={'material-symbols:check-circle'} className="w-6 h-6 mr-3" />
+      ),
+    },
+    error: {
+      background: 'bg-red-500',
+      icon: <Icon icon={'cuida:alert-outline'} className="w-6 h-6 mr-3" />,
+    },
+    warning: {
+      background: 'bg-yellow-500',
+      icon: <Icon icon={'mdi:alert-outline'} className="w-6 h-6 mr-3" />,
+    },
+    info: {
+      background: 'bg-blue-500',
+      icon: <Icon icon={'material-symbols:info'} className="w-6 h-6 mr-3" />,
+    },
   };
 
   return (
@@ -58,16 +73,23 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
         <div className="fixed bottom-4 right-4 z-50">
           <div
             className={`${
-              severityStyles[severity]
+              severityStyles[severity].background
             } text-white px-4 py-3 rounded-lg shadow-lg flex items-center justify-between min-w-[300px] max-w-sm
-            ${isFadingOut ? 'animate-fade-out' : 'animate-fade-in'}`}
+            ${isFadingOut ? 'animate-fade-out' : 'animate-fade-in'}
+            transition-all duration-300 ease-in-out`}
           >
-            <span>{message}</span>
+            <div className="flex items-center">
+              {severityStyles[severity].icon}
+              <span>{message}</span>
+            </div>
             <button
               onClick={handleCloseToast}
               className="ml-4 text-white hover:text-gray-200 focus:outline-none"
             >
-              ✕
+              <Icon
+                icon={'material-symbols:cancel-outline-rounded'}
+                className="w-5 h-5"
+              />
             </button>
           </div>
         </div>
