@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 import Overlay from './Overlay';
+import { Outlet } from 'react-router-dom';
 
-const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+const Layout: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => setIsOpen((prev) => !prev);
@@ -19,8 +20,10 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
         <Header toggleSidebar={toggleSidebar} />
 
         {/* Main Content */}
-        <main className="flex-1 p-6 bg-gray-50 overflow-y-auto">
-          <div className="max-w-4xl mx-auto">{children}</div>
+        <main className="flex-1 p-8 bg-gray-50 overflow-y-auto">
+          <div className="max-w-7xl mx-auto">
+            <Outlet />
+          </div>
         </main>
       </div>
 

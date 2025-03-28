@@ -35,7 +35,7 @@ export const routes: Route[] = [
     path: '/recommendation-agent',
     component: <RecommendationAgent />,
     name: 'Recommendation Agent',
-    icon: 'material-symbols:stars',
+    icon: 'fluent:star-emphasis-24-regular',
   },
   {
     path: '/settings',
