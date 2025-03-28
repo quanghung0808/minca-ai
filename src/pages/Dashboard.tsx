@@ -38,7 +38,7 @@ const Dashboard: React.FC = () => {
       if (!getActivites.isPending) {
         getActivites.mutate();
       }
-    }, 10000);
+    }, 15000);
 
     return () => clearInterval(interval);
   }, []);
@@ -59,8 +59,8 @@ const Dashboard: React.FC = () => {
 
       <div className="items-center shadow-sm bg-white rounded-2xl">
         {getActivites.isPending && <MainLoading />}
-        {currentActivities.map((activity) => (
-          <ActivityItemCard key={activity.id} activity={activity} />
+        {currentActivities.map((activity, index) => (
+          <ActivityItemCard key={index} activity={activity} />
         ))}
       </div>
       <Pagination

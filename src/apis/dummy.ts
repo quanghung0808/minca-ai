@@ -30,7 +30,7 @@ export const fetchAgents = async (): Promise<Agent[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(sampleAgents);
-    }, 2000);
+    }, 1000);
   });
 };
 
@@ -46,6 +46,6 @@ export const updateAgentStatus = async (agent: Agent): Promise<Agent> => {
           ? `Completed task successfully at ${new Date().toLocaleTimeString()}`
           : `Task failed at ${new Date().toLocaleTimeString()}`,
       });
-    }, 2000);
+    }, 1000);
   });
 };
