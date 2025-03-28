@@ -15,7 +15,7 @@ const AgentsOverview: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-10 tracking-tight">
-            Agents <span className="text-blue-600">Overview</span>
+            Agents <span className="text-indigo-600">Overview</span>
           </h1>
           {isLoading ? (
             <MainLoading />

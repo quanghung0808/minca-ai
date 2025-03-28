@@ -25,7 +25,7 @@ const Pagination: React.FC<PaginationProps> = ({
           ${
             currentPage === 1
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-              : 'bg-blue-50 text-blue-600 hover:bg-blue-100 hover:shadow-md'
+              : 'bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:shadow-md'
           }
         `}
       >
@@ -35,7 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({
             ${
               currentPage === 1
                 ? 'text-gray-400'
-                : 'text-blue-600 group-hover:scale-110'
+                : 'text-indigo-600 group-hover:scale-110'
             }
           `}
         ></Icon>
@@ -43,7 +43,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
       <div className="flex items-center space-x-2">
         <span className="text-sm font-semibold text-gray-700">Page</span>
-        <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm font-bold">
+        <span className="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-full text-sm font-bold">
           {currentPage}
         </span>
         <span className="text-sm text-gray-500">of {totalPages}</span>
@@ -59,7 +59,7 @@ const Pagination: React.FC<PaginationProps> = ({
           ${
             currentPage === totalPages
               ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-              : 'bg-blue-50 text-blue-600 hover:bg-blue-100 hover:shadow-md'
+              : 'bg-indigo-50 text-blindigoue-600 hover:bg-indigo-100 hover:shadow-md'
           }
         `}
       >
@@ -69,7 +69,7 @@ const Pagination: React.FC<PaginationProps> = ({
             ${
               currentPage === totalPages
                 ? 'text-gray-400'
-                : 'text-blue-600 group-hover:scale-110'
+                : 'text-indigo-600 group-hover:scale-110'
             }
           `}
         ></Icon>

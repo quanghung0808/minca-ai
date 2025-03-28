@@ -60,7 +60,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
       icon: <Icon icon={Icons.Warning} className="w-6 h-6 mr-3" />,
     },
     info: {
-      background: 'bg-blue-500',
+      background: 'bg-indigo-500',
       icon: <Icon icon={Icons.Info} className="w-6 h-6 mr-3" />,
     },
   };
