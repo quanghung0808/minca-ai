@@ -1,3 +1,4 @@
+import { Icons } from '@/constant/icons';
 import { Icon } from '@iconify/react';
 import React, { createContext, useState, useContext } from 'react';
 
@@ -48,21 +49,19 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
   const severityStyles = {
     success: {
       background: 'bg-green-500',
-      icon: (
-        <Icon icon={'material-symbols:check-circle'} className="w-6 h-6 mr-3" />
-      ),
+      icon: <Icon icon={Icons.Success} className="w-6 h-6 mr-3" />,
     },
     error: {
       background: 'bg-red-500',
-      icon: <Icon icon={'cuida:alert-outline'} className="w-6 h-6 mr-3" />,
+      icon: <Icon icon={Icons.Error} className="w-6 h-6 mr-3" />,
     },
     warning: {
       background: 'bg-yellow-500',
-      icon: <Icon icon={'mdi:alert-outline'} className="w-6 h-6 mr-3" />,
+      icon: <Icon icon={Icons.Warning} className="w-6 h-6 mr-3" />,
     },
     info: {
       background: 'bg-blue-500',
-      icon: <Icon icon={'material-symbols:info'} className="w-6 h-6 mr-3" />,
+      icon: <Icon icon={Icons.Info} className="w-6 h-6 mr-3" />,
     },
   };
 
@@ -86,10 +85,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({
               onClick={handleCloseToast}
               className="ml-4 text-white hover:text-gray-200 focus:outline-none"
             >
-              <Icon
-                icon={'material-symbols:cancel-outline-rounded'}
-                className="w-5 h-5"
-              />
+              <Icon icon={Icons.Cancel} className="w-5 h-5" />
             </button>
           </div>
         </div>

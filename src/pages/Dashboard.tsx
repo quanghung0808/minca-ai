@@ -7,6 +7,7 @@ import Pagination from '@/components/pagination/Pagination';
 import { useMutation } from '@tanstack/react-query';
 import { Icon } from '@iconify/react';
 import { useToast } from '@/context/ToastProvider';
+import { Icons } from '@/constant/icons';
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,11 +61,8 @@ const Dashboard: React.FC = () => {
       <div className="items-center shadow-sm bg-white rounded-2xl">
         {getActivites.isPending && (
           <div className="flex justify-center items-center h-64">
-            <span className=" rounded-full animate-pulse">
-              <Icon
-                icon={'mingcute:loading-fill'}
-                className="w-10 h-10 animate-spin"
-              />
+            <span className="rounded-full animate-pulse">
+              <Icon icon={Icons.Loading} className="w-10 h-10 animate-spin" />
             </span>
           </div>
         )}

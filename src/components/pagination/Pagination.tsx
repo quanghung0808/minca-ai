@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import { Icons } from '@/constant/icons';
 
 interface PaginationProps {
   currentPage: number;
@@ -29,7 +30,7 @@ const Pagination: React.FC<PaginationProps> = ({
         `}
       >
         <Icon
-          icon={'material-symbols:chevron-left'}
+          icon={Icons.ChevronLeft}
           className={`w-6 h-6 
             ${
               currentPage === 1
@@ -63,7 +64,7 @@ const Pagination: React.FC<PaginationProps> = ({
         `}
       >
         <Icon
-          icon={'material-symbols:chevron-right'}
+          icon={Icons.ChevronRight}
           className={`w-6 h-6 
             ${
               currentPage === totalPages

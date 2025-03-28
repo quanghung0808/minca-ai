@@ -1,3 +1,4 @@
+import { Icons } from '@/constant/icons';
 import { Status, Statuses } from '@/types/agent';
 import { Icon } from '@iconify/react';
 
@@ -10,7 +11,7 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
     return (
       <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded-full animate-pulse">
         <Icon
-          icon={'hugeicons:loading-02'}
+          icon={Icons.InProgress}
           className="w-4 h-4 mr-1 animate-spin"
         />
         {Statuses.INPROGRESS}
@@ -20,14 +21,14 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
   if (status === Statuses.DONE) {
     return (
       <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full">
-        <Icon icon={'mdi:success'} className="w-4 h-4 mr-1" />
+        <Icon icon={Icons.Success} className="w-4 h-4 mr-1" />
         {Statuses.DONE}
       </span>
     );
   }
   return (
     <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-red-800 bg-red-100 rounded-full">
-      <Icon icon={'mingcute:warning-line'} className="w-4 h-4 mr-1" />
+      <Icon icon={Icons.Failed} className="w-4 h-4 mr-1" />
       {Statuses.FAILED}
     </span>
   );

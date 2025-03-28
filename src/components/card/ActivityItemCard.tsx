@@ -2,6 +2,7 @@ import { Icon } from '@iconify/react';
 import { Activity } from '@/types/activity';
 import { Agents } from '@/types/agent';
 import StatusBadge from '../badge/StatusBadge';
+import { Icons } from '@/constant/icons';
 
 interface ActivityItemCardProps {
   activity: Activity;
@@ -14,10 +15,10 @@ const ActivityItemCard: React.FC<ActivityItemCardProps> = ({ activity }) => {
       <Icon
         icon={
           activity.agent === Agents.QOUTE
-            ? 'material-symbols:chat-bubble-outline'
+            ? Icons.Quote
             : activity.agent === Agents.CLAIMS
-            ? 'material-symbols:description'
-            : 'fluent:star-emphasis-24-regular'
+            ? Icons.Claims
+            : Icons.Recommendation
         }
         className="w-9 h-9 text-indigo-600 mr-3 bg-indigo-100 rounded-full p-2"
       />
