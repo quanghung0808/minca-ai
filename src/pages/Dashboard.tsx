@@ -5,9 +5,8 @@ import CustomButton from '@/components/button/CustomButton';
 import ActivityItemCard from '@/components/card/ActivityItemCard';
 import Pagination from '@/components/pagination/Pagination';
 import { useMutation } from '@tanstack/react-query';
-import { Icon } from '@iconify/react';
 import { useToast } from '@/context/ToastProvider';
-import { Icons } from '@/constant/icons';
+import MainLoading from '@/components/loading/MainLoading';
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,15 +58,9 @@ const Dashboard: React.FC = () => {
       </p>
 
       <div className="items-center shadow-sm bg-white rounded-2xl">
-        {getActivites.isPending && (
-          <div className="flex justify-center items-center h-64">
-            <span className="rounded-full animate-pulse">
-              <Icon icon={Icons.Loading} className="w-10 h-10 animate-spin" />
-            </span>
-          </div>
-        )}
-        {currentActivities.map((activity, index) => (
-          <ActivityItemCard key={index} activity={activity} />
+        {getActivites.isPending && <MainLoading />}
+        {currentActivities.map((activity) => (
+          <ActivityItemCard key={activity.id} activity={activity} />
         ))}
       </div>
       <Pagination

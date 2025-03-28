@@ -1,5 +1,6 @@
+import { Statuses } from '@/constant/agents';
 import { Icons } from '@/constant/icons';
-import { Status, Statuses } from '@/types/agent';
+import { Status } from '@/types/agent';
 import { Icon } from '@iconify/react';
 
 interface StatusBadgeProps {
@@ -10,10 +11,7 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
   if (status === Statuses.INPROGRESS) {
     return (
       <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded-full animate-pulse">
-        <Icon
-          icon={Icons.InProgress}
-          className="w-4 h-4 mr-1 animate-spin"
-        />
+        <Icon icon={Icons.InProgress} className="w-4 h-4 mr-1 animate-spin" />
         {Statuses.INPROGRESS}
       </span>
     );

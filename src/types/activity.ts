@@ -1,8 +1,9 @@
-import { Agent, Status } from './agent';
+import { AgentName, Status } from './agent';
 
 export interface Activity {
+  id: number;
   action: string;
-  agent: Agent;
+  agent: AgentName;
   time: string;
   status: Status;
 }

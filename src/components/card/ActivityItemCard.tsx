@@ -1,8 +1,8 @@
 import { Icon } from '@iconify/react';
 import { Activity } from '@/types/activity';
-import { Agents } from '@/types/agent';
 import StatusBadge from '../badge/StatusBadge';
 import { Icons } from '@/constant/icons';
+import { AgentNames } from '@/constant/agents';
 
 interface ActivityItemCardProps {
   activity: Activity;
@@ -14,9 +14,9 @@ const ActivityItemCard: React.FC<ActivityItemCardProps> = ({ activity }) => {
       {/* Icon */}
       <Icon
         icon={
-          activity.agent === Agents.QOUTE
+          activity.agent === AgentNames.QOUTE
             ? Icons.Quote
-            : activity.agent === Agents.CLAIMS
+            : activity.agent === AgentNames.CLAIMS
             ? Icons.Claims
             : Icons.Recommendation
         }

@@ -1,14 +1,11 @@
-export const Agents = {
-  CLAIMS: 'Claims Agent',
-  QOUTE: 'Quote Request Agent',
-  RECOMMENDATION: 'Recommendation Agent',
-} as const;
+import { AgentNames, Statuses } from '@/constant/agents';
 
-export const Statuses = {
-  DONE: 'Done',
-  INPROGRESS: 'In Progress',
-  FAILED: 'Failed',
-} as const;
-
-export type Agent = (typeof Agents)[keyof typeof Agents];
+export type AgentName = (typeof AgentNames)[keyof typeof AgentNames];
 export type Status = (typeof Statuses)[keyof typeof Statuses];
+
+export interface Agent {
+  id: number;
+  name: AgentName;
+  status: Status;
+  lastAction: string;
+}
