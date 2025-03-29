@@ -6,7 +6,7 @@ import ActivityItemCard from '@/components/card/ActivityItemCard';
 import Pagination from '@/components/pagination/Pagination';
 import { useMutation } from '@tanstack/react-query';
 import { useToast } from '@/context/ToastProvider';
-import MainLoading from '@/components/loading/MainLoading';
+import { ActivityItemCardSkeleton } from '@/components/skeleton/ActivityItemCardSkeleton';
 
 const Dashboard: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -53,12 +53,18 @@ const Dashboard: React.FC = () => {
           onClick={() => getActivites.mutate()}
         />
       </div>
-      <p className="text-gray-600 mb-4">
+      <p className="text-gray-500 text-sm mb-6">
         Live activity feed from your AI agents
       </p>
 
       <div className="items-center shadow-sm bg-white rounded-2xl">
-        {getActivites.isPending && <MainLoading />}
+        {getActivites.isPending && (
+          <div className="flex flex-col">
+            <ActivityItemCardSkeleton />
+            <ActivityItemCardSkeleton />
+            <ActivityItemCardSkeleton />
+          </div>
+        )}
         {currentActivities.map((activity, index) => (
           <ActivityItemCard key={index} activity={activity} />
         ))}
