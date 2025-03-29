@@ -1,5 +1,7 @@
+import EmptyState from '@/components/section/EmptyState';
+
 const QuoteRequestsAgent = () => {
-  return <div>Quote Requests Agent</div>;
+  return <EmptyState />;
 };
 
 export default QuoteRequestsAgent;

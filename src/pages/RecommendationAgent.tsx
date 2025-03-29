@@ -1,5 +1,7 @@
+import EmptyState from '@/components/section/EmptyState';
+
 const RecommendationAgent = () => {
-  return <div>Recommendation Agent</div>;
+  return <EmptyState />;
 };
 
 export default RecommendationAgent;

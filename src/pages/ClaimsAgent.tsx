@@ -1,5 +1,7 @@
+import EmptyState from '@/components/section/EmptyState';
+
 const ClaimsAgent = () => {
-  return <div>Claims Agent</div>;
+  return <EmptyState />;
 };
 
 export default ClaimsAgent;

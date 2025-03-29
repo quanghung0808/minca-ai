@@ -1,7 +1,7 @@
-import React from 'react';
+import EmptyState from '@/components/section/EmptyState';
 
 const Settings = () => {
-  return <div>Settings</div>;
+  return <EmptyState />;
 };
 
 export default Settings;
