@@ -36,7 +36,7 @@
 ## What I Would Improve with More Time
 
 - **Enhance animations** to create a smoother and more engaging experience.
-- **Improve UI/UX** by refining styling, adding themes, and making the sidebar collapsible.
+- **Improve UI/UX** by refining styling, adding themes.
 - **Implement better data handling** by introducing a state management solution like Zustand or Redux.
 - **Integrate WebSockets** for real-time updates instead of using setTimeout() for simulating activity.
 - **Expand agent functionality** by allowing dynamic task creation and history tracking.
