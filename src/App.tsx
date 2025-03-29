@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Layout from './components/layout/Layout';
 import { ToastProvider } from './context/ToastProvider';
 import { QueryClientProvider } from './context/QueryClientProvider';
+import NotFound from './pages/NotFound';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                     element={route.component}
                   />
                 ))}
+                <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
           </ToastProvider>
